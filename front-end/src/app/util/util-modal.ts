@@ -1,3 +1,4 @@
+import * as bootstrap from "bootstrap";
 import { Modal } from "bootstrap";
 
 export class UtilModal {
@@ -6,7 +7,7 @@ export class UtilModal {
 
     static show(show: boolean, id: string): void {
         if (show) {
-            this.modal = new bootstrap.Modal(document.getElementById(id), {
+            this.modal = new bootstrap.Modal(document.getElementById(id)!, {
                 keyboard: false
               });
               this.modal?.show();

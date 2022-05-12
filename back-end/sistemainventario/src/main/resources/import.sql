@@ -7,7 +7,7 @@ INSERT INTO inventario (idinventario,idproducto,cantidad) values (2,2,100)
 
 INSERT INTO usuario (id_usuario,nombre_usuario, password, enabled ) values (1,'juan','$2a$10$LXvl9cEhPNTO9pX9ApvPG.sPlrm0LuvxHDLmmw8gMFE6BZiwGCwhO', true)
 INSERT INTO usuario (id_usuario,nombre_usuario, password, enabled ) values (2,'juanes','$2a$10$67.bRA3bwhfWYIixkwZl3O/KzLjUB8jzQH7azaAVZ.nKf488wAM5q', true)
-INSERT INTO usuario (id_usuario,nombre_usuario, password, enabled ) values (3,'admin','$2a$10$7IiIY2rzd3Tm9CrOLrNsY.LJ6t6WvYmINFIbYJNguz4v94Dsb1vIS', true)
+INSERT INTO usuario (id_usuario,nombre_usuario, password, enabled ) values (3,'admin','$2a$10$Tl2wElm/nFoyF0BzQLTaC.5qchC2JEFRUKyZ6Ssasp6ALgE/SGiie', true)
 INSERT INTO usuario (id_usuario,nombre_usuario, password, enabled ) values (4,'guest','$2a$10$Cb7zIyAbG5koPgzCU0GRmOMce8ZteSDelruH5vAhSrZE53rBxVLfq', true)
 
 INSERT INTO roles (id_rol,nombre_rol) values (1,'ROLE_ADMIN')
