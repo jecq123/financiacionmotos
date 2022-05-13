@@ -1,6 +1,6 @@
-package co.com.uco.sistemainventario.entidad;
+package co.com.uco.sistemainventario.comando;
 
-public class Persona {
+public class ComandoPersona {
     private Integer idPersona;
     private String identificacion;
     private String nombreCompleto;

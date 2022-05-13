@@ -1,6 +1,6 @@
-package co.com.uco.sistemainventario.entidad;
+package co.com.uco.sistemainventario.comando;
 
-public class Moto {
+public class ComandoMoto {
     private Integer idMoto;
     private String referencia;
     private String marca;
