@@ -19,8 +19,6 @@ public class SistemaInventarioApplication implements CommandLineRunner {
 			 BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();	 
 			 String passwordEncrypt = passwordEncoder.encode(password);
 			 System.out.println(passwordEncrypt);
-			 
 		}
-		
 	}
 }
