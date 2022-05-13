@@ -1,8 +1,13 @@
 package co.com.uco.sistemainventario.comando;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Getter
+@Setter
 public class ComandoCredito {
     private Integer idCredito;
     private Integer idCliente;
