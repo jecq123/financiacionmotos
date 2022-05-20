@@ -1,0 +1,26 @@
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="col">
+                <label for="referencia-moto">Moto:</label>
+                <select id="referencia-moto" class="form-control">
+                    <option *ngFor="let moto of motos" [value]="moto.idMoto">{{moto.referencia}}</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="precio-moto">Precio:</label>
+                <input id="precio-moto" type="number" class="form-control" [value]="moto? moto.precio : 0" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="cuota-inicial">Cuota Inicial:</label>
+                <input id="cuota-inicial" type="text" class="form-control">
+            </div>
+            <div class="col">
+                <label for="numero-cuotas">Numero Cuotas:</label>
+                <input id="numero-cuotas" type="number" class="form-control">
+            </div>
+        </div>
+    </form>
+</div>

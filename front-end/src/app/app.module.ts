@@ -14,6 +14,7 @@ import { ProductService } from './service/product/product.service';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { LoginComponent } from './component/login/login.component';
 import { ProductoComponent } from './component/producto/producto.component';
+import { CotizacionComponent } from './component/cotizacion/cotizacion.component';
 const maskConfigFunction: () => Partial<IConfig> = () => {
   return {
     validation: false,
@@ -29,7 +30,8 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     ProductHomeComponent,
     ProductFormComponent,
     LoginComponent,
-    ProductoComponent
+    ProductoComponent,
+    CotizacionComponent
   ],
   imports: [
     BrowserModule,
