@@ -16,9 +16,9 @@ public class ClienteConverter {
 
     public Cliente crear(ComandoCliente comandoCliente) {
         Cliente cliente = new Cliente();
-        ValidadorArgumento.validarObligatorio(comandoCliente.getIdPersona, EL_ID_DE_UNA_PERSONA_ES_OBLIGATORIO);
-        ValidadorArgumento.validarObligatorio(comandoCliente.getCorreo, EL_CORREO_ES_OBLIGATORIO);
-        ValidadorArgumento.validarObligatorio(comandoCliente.getResidencia, UNA_DIRECCION_ES_OBLIGATORIA);
+        ValidadorArgumento.validarObligatorio(comandoCliente.getIdPersona(), EL_ID_DE_UNA_PERSONA_ES_OBLIGATORIO);
+        ValidadorArgumento.validarObligatorio(comandoCliente.getCorreo(), EL_CORREO_ES_OBLIGATORIO);
+        ValidadorArgumento.validarObligatorio(comandoCliente.getResidencia(), UNA_DIRECCION_ES_OBLIGATORIA);
         cliente.getPersona().setIdPersona(comandoCliente.getIdPersona());
         cliente.setCorreo(comandoCliente.getCorreo());
         cliente.setResidencia(comandoCliente.getResidencia());
@@ -27,10 +27,10 @@ public class ClienteConverter {
 
     public Cliente editar(ComandoCliente comandoCliente) {
         Cliente cliente = new Cliente();
-        ValidadorArgumento.validarObligatorio(comandoCliente.getIdCliente, EL_ID_DEL_CLIENTE_ES_OBLIGATORIO);
-        ValidadorArgumento.validarObligatorio(comandoCliente.getIdPersona, EL_ID_DE_UNA_PERSONA_ES_OBLIGATORIO);
-        ValidadorArgumento.validarObligatorio(comandoCliente.getCorreo, EL_CORREO_ES_OBLIGATORIO);
-        ValidadorArgumento.validarObligatorio(comandoCliente.getResidencia, UNA_DIRECCION_ES_OBLIGATORIA);
+        ValidadorArgumento.validarObligatorio(comandoCliente.getIdCliente(), EL_ID_DEL_CLIENTE_ES_OBLIGATORIO);
+        ValidadorArgumento.validarObligatorio(comandoCliente.getIdPersona(), EL_ID_DE_UNA_PERSONA_ES_OBLIGATORIO);
+        ValidadorArgumento.validarObligatorio(comandoCliente.getCorreo(), EL_CORREO_ES_OBLIGATORIO);
+        ValidadorArgumento.validarObligatorio(comandoCliente.getResidencia(), UNA_DIRECCION_ES_OBLIGATORIA);
         cliente.getPersona().setIdPersona(comandoCliente.getIdPersona());
         cliente.setCorreo(comandoCliente.getCorreo());
         cliente.setResidencia(comandoCliente.getResidencia());

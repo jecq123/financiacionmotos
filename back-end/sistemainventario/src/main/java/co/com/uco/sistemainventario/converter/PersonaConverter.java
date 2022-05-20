@@ -31,7 +31,7 @@ public class PersonaConverter {
         ValidadorArgumento.validarObligatorio(comandoPersona.getIdPersona(), EL_ID_DE_LA_PERSONA_NO_ES_VALIDO);
         ValidadorArgumento.validarObligatorio(comandoPersona.getIdentificacion(), LA_IDENTIFICACION_NO_ES_VALIDA);
         ValidadorArgumento.validarObligatorio(comandoPersona.getNombreCompleto(), EL_NOMBRE_COMPLETO_ES_OBLIGATORIO);
-        ValidadorArgumento.validarObligatorio(comandoPersona.getContacto, EL_CONTACTO_ES_OBLIGATORIO);
+        ValidadorArgumento.validarObligatorio(comandoPersona.getContacto(), EL_CONTACTO_ES_OBLIGATORIO);
         persona.setIdPersona(comandoPersona.getIdPersona());
         persona.setIdentificacion(comandoPersona.getIdentificacion());
         persona.setNombreCompleto(comandoPersona.getNombreCompleto());

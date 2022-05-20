@@ -49,7 +49,7 @@ public class CreditoConverter {
         ValidadorArgumento.validarObligatorio(comandoCredito.getValorCuotaInicial(), EL_VALOR_DE_LA_CUOTA_INICIAL_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoCredito.getNumeroCuotas(), SE_REQUIERE_EL_NUMERO_DE_CUOTAS);
         ValidadorArgumento.validarObligatorio(comandoCredito.getFecha(), LA_FECHA_DEL_CREDITO_ES_OBLIGATORIA);
-        credito.setidCredito(comandoCredito.getIdCredito());
+        credito.setIdCredito(comandoCredito.getIdCredito());
         credito.getCliente().setIdCliente(comandoCredito.getIdCliente());
         credito.getVendedor().setIdVendedor(comandoCredito.getIdVendedor());
         credito.getMoto().setIdMoto(comandoCredito.getIdMoto());
@@ -61,7 +61,7 @@ public class CreditoConverter {
     }
 
     public Credito borrar(Integer idCredito) {
-        ValidadorArgumento.validarObligatorio(idCredito, EL_ID_DEL_CRÉDITO_ES_OBLIGATORIO);
+        ValidadorArgumento.validarObligatorio(idCredito, EL_ID_DEL_CREDITO_ES_OBLIGATORIO);
         ValidadorArgumento.validarPositivo(idCredito, EL_ID_DEL_CREDITO_ES_INVALIDO);
         Credito credito = new Credito();
         credito.setIdCredito(idCredito);

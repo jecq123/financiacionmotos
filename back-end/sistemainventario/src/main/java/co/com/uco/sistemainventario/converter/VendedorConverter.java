@@ -30,7 +30,7 @@ public class VendedorConverter {
 
     public Vendedor borrar(Integer idVendedor) {
         ValidadorArgumento.validarObligatorio(idVendedor, EL_ID_DEL_VENDEDOR_ES_OBLIGATORIO);
-        ValidadorArgumento.validarPositivo((idVendedor, EL_ID_DEL_VENDEDOR_NO_ES_VALIDO);
+        ValidadorArgumento.validarPositivo(idVendedor, EL_ID_DEL_VENDEDOR_NO_ES_VALIDO);
         Vendedor vendedor = new Vendedor();
         vendedor.setIdVendedor(idVendedor);
         return vendedor;

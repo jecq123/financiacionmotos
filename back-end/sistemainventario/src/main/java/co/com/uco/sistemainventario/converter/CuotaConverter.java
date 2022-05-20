@@ -18,9 +18,9 @@ public class CuotaConverter {
         ValidadorArgumento.validarObligatorio(comandoCuota.getNumero(), EL_NUMERO_DE_LA_CUOTA_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoCuota.getValor(), EL_VALOR_DE_LA_CUOTA_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoCuota.getFechaPago(), LA_FECHA_ES_REQUERIDA);
-        cuota.setNumero(comandoCuota.getNumero);
-        cuota.setValor(comandoCuota.getValor);
-        cuota.setFechaPago(comandoCuota.getFechaPago);
+        cuota.setNumero(comandoCuota.getNumero());
+        cuota.setValor(comandoCuota.getValor());
+        cuota.setFechaPago(comandoCuota.getFechaPago());
         return cuota;
     }
 
@@ -30,10 +30,10 @@ public class CuotaConverter {
         ValidadorArgumento.validarObligatorio(comandoCuota.getNumero(), EL_NUMERO_DE_LA_CUOTA_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoCuota.getValor(), EL_VALOR_DE_LA_CUOTA_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoCuota.getFechaPago(), LA_FECHA_ES_REQUERIDA);
-        cuota.setIdCuota(comandoCuota.getIdCuota);
-        cuota.setNumero(comandoCuota.getNumero);
-        cuota.setValor(comandoCuota.getValor);
-        cuota.setFechaPago(comandoCuota.getFechaPago);
+        cuota.setIdCuota(comandoCuota.getIdCuota());
+        cuota.setNumero(comandoCuota.getNumero());
+        cuota.setValor(comandoCuota.getValor());
+        cuota.setFechaPago(comandoCuota.getFechaPago());
         return cuota;
     }
 

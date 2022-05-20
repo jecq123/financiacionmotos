@@ -17,7 +17,7 @@ public class EdicionServicioCreditoImpl implements EdicionServicioCredito {
     public Integer ejecutar(Credito credito) {
         Credito creditoAnterior=buscarCredito(credito);
         creditoAnterior.setCliente(credito.getCliente());
-        creditoAnterior.setCuotas(credito.getCuotas());
+        creditoAnterior.setNumeroCuotas(credito.getNumeroCuotas());
         creditoAnterior.setFecha(credito.getFecha());
         creditoAnterior.setValorCuotaInicial(credito.getValorCuotaInicial());
         creditoRepository.save(creditoAnterior);
