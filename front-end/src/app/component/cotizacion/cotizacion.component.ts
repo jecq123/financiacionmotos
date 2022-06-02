@@ -18,7 +18,6 @@ export class CotizacionComponent implements OnInit {
     this.motoService.getAll().toPromise().then(motos => {
       this.motos = motos;
       console.log(motos);
-      
     })
       .catch(error => Excepcion.controlar(error));
   }

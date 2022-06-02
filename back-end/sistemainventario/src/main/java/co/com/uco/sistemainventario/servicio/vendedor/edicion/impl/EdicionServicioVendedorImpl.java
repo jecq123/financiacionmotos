@@ -17,7 +17,6 @@ public class EdicionServicioVendedorImpl implements EdicionServicioVendedor {
     @Override
     public Integer ejecutar(Vendedor vendedor) {
         Vendedor vendedorAnterior = buscarVendedor(vendedor);
-        vendedorAnterior.setPersona(vendedor.getPersona());
         vendedorRepository.save(vendedorAnterior);
         return vendedorAnterior.getIdVendedor();
     }

@@ -16,7 +16,6 @@ public class EdicionServicioClienteImpl implements EdicionServicioCliente {
     @Override
     public Integer ejecutar(Cliente cliente) {
         Cliente clienteAnterior= buscarCliente(cliente);
-        clienteAnterior.setPersona(cliente.getPersona());
         clienteAnterior.setCorreo(cliente.getCorreo());
         clienteAnterior.setResidencia(cliente.getResidencia());
         clienteRepository.save(clienteAnterior);

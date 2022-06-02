@@ -19,14 +19,8 @@ public class CreacionServicioClienteImpl implements CreacionServicioCliente {
 
     @Override
     public Integer ejecutar(Cliente cliente) {
-        Persona persona= buscarPersona(cliente);
-        cliente.setPersona(persona);
         clienteRepository.save(cliente);
         return cliente.getIdCliente();
     }
 
-    private Persona buscarPersona(Cliente cliente) {
-        return personaRepository.findById(cliente.getPersona().getIdPersona())
-                .orElseThrow(() -> new ExcepcionNoExisteRegistro("No existe la persona"));
-    }
 }
