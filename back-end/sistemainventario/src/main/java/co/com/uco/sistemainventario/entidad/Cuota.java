@@ -16,6 +16,9 @@ public class Cuota {
     @Column(name = "idcuota")
     private Integer idCuota;
 
+    @Column(name = "idcredito")
+    private Integer idCredito;
+
     @Column(name = "numero")
     private int numero;
 

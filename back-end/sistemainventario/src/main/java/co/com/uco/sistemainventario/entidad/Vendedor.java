@@ -15,7 +15,12 @@ public class Vendedor {
     @Column(name = "idvendedor")
     private Integer idVendedor;
 
-    @OneToOne
-    @JoinColumn(name = "idpersona")
-    private Persona persona;
+    @Column(name = "identificacion")
+    private String identificacion;
+
+    @Column(name = "nombreCompleto")
+    private String nombreCompleto;
+
+    @Column(name = "contacto")
+    private String contacto;
 }

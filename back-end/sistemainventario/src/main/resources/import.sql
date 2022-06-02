@@ -16,3 +16,6 @@ INSERT INTO users_authorities (id_usuario, id_rol ) values (1,1)
 INSERT INTO users_authorities (id_usuario, id_rol ) values (2,2)
 INSERT INTO users_authorities (id_usuario, id_rol ) values (3,1)
 INSERT INTO users_authorities (id_usuario, id_rol ) values (4,2)	
+
+INSERT INTO moto (referencia,marca, modelo, cilindraje, precio ) values('Pulsar NS200', 'Bajaj', 2022, 200, 10400000)
+INSERT INTO moto (referencia,marca, modelo, cilindraje, precio ) values('AX4', 'Susuki', 2022, 115, 5300000)

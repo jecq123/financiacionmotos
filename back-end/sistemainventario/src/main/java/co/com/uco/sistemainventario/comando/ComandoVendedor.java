@@ -7,5 +7,7 @@ import lombok.Setter;
 @Setter
 public class ComandoVendedor {
     private Integer idVendedor;
-    private Integer idPersona;
+    private String identificacion;
+    private String nombreCompleto;
+    private String contacto;
 }

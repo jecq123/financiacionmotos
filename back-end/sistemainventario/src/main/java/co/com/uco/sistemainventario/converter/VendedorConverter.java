@@ -14,16 +14,18 @@ public class VendedorConverter {
 
     public Vendedor crear(ComandoVendedor comandoVendedor) {
         Vendedor vendedor = new Vendedor();
-        ValidadorArgumento.validarObligatorio(comandoVendedor.getIdPersona(), EL_ID_DE_UNA_PERSONA_ES_OBLIGATORIO);
-        vendedor.getPersona().setIdPersona(comandoVendedor.getIdPersona());
+        vendedor.setIdentificacion(comandoVendedor.getIdentificacion());
+        vendedor.setNombreCompleto(comandoVendedor.getNombreCompleto());
+        vendedor.setContacto(comandoVendedor.getContacto());
         return vendedor;
     }
 
     public Vendedor editar(ComandoVendedor comandoVendedor) {
         Vendedor vendedor = new Vendedor();
         ValidadorArgumento.validarObligatorio(comandoVendedor.getIdVendedor(), EL_ID_DEL_VENDEDOR_ES_OBLIGATORIO);
-        ValidadorArgumento.validarObligatorio(comandoVendedor.getIdPersona(), EL_ID_DE_UNA_PERSONA_ES_OBLIGATORIO);
-        vendedor.getPersona().setIdPersona(comandoVendedor.getIdPersona());
+        vendedor.setIdentificacion(comandoVendedor.getIdentificacion());
+        vendedor.setNombreCompleto(comandoVendedor.getNombreCompleto());
+        vendedor.setContacto(comandoVendedor.getContacto());
         vendedor.setIdVendedor(comandoVendedor.getIdVendedor());
         return vendedor;
     }

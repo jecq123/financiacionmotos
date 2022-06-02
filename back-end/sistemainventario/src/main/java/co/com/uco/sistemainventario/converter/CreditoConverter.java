@@ -35,6 +35,7 @@ public class CreditoConverter {
         credito.setValorMoto(comandoCredito.getValorMoto());
         credito.setValorCuotaInicial(comandoCredito.getValorCuotaInicial());
         credito.setNumeroCuotas(comandoCredito.getNumeroCuotas());
+        credito.setValorCuota(comandoCredito.getValorCuota());
         credito.setFecha(comandoCredito.getFecha());
         return credito;
     }

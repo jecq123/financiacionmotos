@@ -15,9 +15,14 @@ public class Cliente {
     @Column(name = "idcliente")
     private Integer idCliente;
 
-    @OneToOne
-    @JoinColumn(name = "idpersona")
-    private Persona persona;
+    @Column(name = "identificacion")
+    private String identificacion;
+
+    @Column(name = "nombreCompleto")
+    private String nombreCompleto;
+
+    @Column(name = "contacto")
+    private String contacto;
 
     @Column(name = "correo")
     private String correo;

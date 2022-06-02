@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @Setter
 public class ComandoCuota {
     private Integer idCuota;
+    private Integer idCredito;
     private int numero;
     private double valor;
     private LocalDateTime fechaPago;

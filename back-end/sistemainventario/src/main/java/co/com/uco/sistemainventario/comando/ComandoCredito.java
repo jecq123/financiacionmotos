@@ -16,5 +16,6 @@ public class ComandoCredito {
     private double valorMoto;
     private double valorCuotaInicial;
     private int numeroCuotas;
+    private double valorCuota;
     private LocalDateTime fecha;
 }

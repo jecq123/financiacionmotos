@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "credito")
@@ -37,6 +38,13 @@ public class Credito {
     @Column(name = "numerocuotas")
     private int numeroCuotas;
 
+    @Column(name = "valorcuota")
+    private double valorCuota;
+
     @Column(name = "fecha")
     private LocalDateTime fecha;
+
+    @OneToMany
+    @JoinColumn(name = "idcredito")
+    private List<Cuota> listaCuotas;
 }
