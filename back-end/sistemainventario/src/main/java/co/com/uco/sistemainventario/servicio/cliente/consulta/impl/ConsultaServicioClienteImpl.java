@@ -16,4 +16,9 @@ public class ConsultaServicioClienteImpl implements ConsultaServicioCliente{
     public Iterable<Cliente> findAll() {
         return clienteRepository.findAll();
     }
+
+    @Override
+    public Cliente findByIdentificacion(String identificacion) {
+        return clienteRepository.findByIdentificacion(identificacion);
+    }
 }

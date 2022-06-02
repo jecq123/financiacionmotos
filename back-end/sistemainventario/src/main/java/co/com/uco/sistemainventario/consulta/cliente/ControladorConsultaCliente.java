@@ -5,6 +5,7 @@ import co.com.uco.sistemainventario.servicio.cliente.consulta.ConsultaServicioCl
 import co.com.uco.sistemainventario.servicio.moto.consulta.ConsultaServicioMoto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,5 +20,11 @@ public class ControladorConsultaCliente{
     Iterable<Cliente> findAll() {
         return consultaServicioCliente.findAll();
     }
+
+    @GetMapping("/{identificacion}")
+    Cliente findByIdentificacion(@PathVariable String identificacion){
+        return consultaServicioCliente.findByIdentificacion(identificacion);
+    }
+
 
 }
