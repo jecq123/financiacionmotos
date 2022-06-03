@@ -19,3 +19,7 @@ INSERT INTO users_authorities (id_usuario, id_rol ) values (4,2)
 
 INSERT INTO moto (referencia,marca, modelo, cilindraje, precio ) values('Pulsar NS200', 'Bajaj', 2022, 200, 10400000)
 INSERT INTO moto (referencia,marca, modelo, cilindraje, precio ) values('AX4', 'Susuki', 2022, 115, 5300000)
+
+INSERT INTO cliente (identificacion, nombrecompleto, contacto, correo, residencia) values ('1007334302', 'Brayan Estiven Sepulveda Quintero', '320 864 91 85', 'brayan.sepulveda4302@soyuco.edu.co', 'Marinilla')
+
+INSERT INTO vendedor (identificacion, nombrecompleto, contacto, correo, residencia) values ('1007334302', 'Brayan Estiven Sepulveda Quintero', '320 864 91 85', 'brayan.sepulveda4302@soyuco.edu.co', 'Marinilla')
