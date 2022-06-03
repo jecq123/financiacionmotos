@@ -15,7 +15,7 @@ public class ControladorConsultaCredito {
     @Autowired
     private ConsultaServicioCredito consultaServicioCredito;
 
-    @PostMapping
+    @PostMapping(value = "/cuota")
     double consultarValorCuota(@RequestBody ComandoCredito comandoCredito) {
         return consultaServicioCredito.consultarValorCuota(comandoCredito);
     }
