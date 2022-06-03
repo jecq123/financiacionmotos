@@ -13,9 +13,15 @@ public class ClienteConverter {
     public static final String UNA_DIRECCION_ES_OBLIGATORIA = "Una dirección es obligatoria";
     public static final String EL_ID_DEL_CLIENTE_ES_OBLIGATORIO = "El id del cliente es obligatorio";
     public static final String EL_ID_DEL_CLIENTE_NO_ES_VALIDO = "El id del cliente no es válido";
+    public static final String LA_IDENTIFICACION_DEL_CLIENTE_ES_OBLIGATORIA = "La identificacion del cliente es obligatoria";
+    public static final String EL_NOMBRE_DEL_CLIENTE_ES_OBLIGATORIO = "El nombre del cliente es obligatorio";
+    public static final String EL_CONTACTO_DEL_CLIENTE_ES_OBLIGATORIO = "El contacto del cliente es obligatorio";
 
     public Cliente crear(ComandoCliente comandoCliente) {
         Cliente cliente = new Cliente();
+        ValidadorArgumento.validarObligatorio(comandoCliente.getIdentificacion(), LA_IDENTIFICACION_DEL_CLIENTE_ES_OBLIGATORIA);
+        ValidadorArgumento.validarObligatorio(comandoCliente.getNombreCompleto(), EL_NOMBRE_DEL_CLIENTE_ES_OBLIGATORIO);
+        ValidadorArgumento.validarObligatorio(comandoCliente.getContacto(), EL_CONTACTO_DEL_CLIENTE_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoCliente.getCorreo(), EL_CORREO_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoCliente.getResidencia(), UNA_DIRECCION_ES_OBLIGATORIA);
         cliente.setIdentificacion(comandoCliente.getIdentificacion());
@@ -29,6 +35,9 @@ public class ClienteConverter {
     public Cliente editar(ComandoCliente comandoCliente) {
         Cliente cliente = new Cliente();
         ValidadorArgumento.validarObligatorio(comandoCliente.getIdCliente(), EL_ID_DEL_CLIENTE_ES_OBLIGATORIO);
+        ValidadorArgumento.validarObligatorio(comandoCliente.getIdentificacion(), LA_IDENTIFICACION_DEL_CLIENTE_ES_OBLIGATORIA);
+        ValidadorArgumento.validarObligatorio(comandoCliente.getNombreCompleto(), EL_NOMBRE_DEL_CLIENTE_ES_OBLIGATORIO);
+        ValidadorArgumento.validarObligatorio(comandoCliente.getContacto(), EL_CONTACTO_DEL_CLIENTE_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoCliente.getCorreo(), EL_CORREO_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoCliente.getResidencia(), UNA_DIRECCION_ES_OBLIGATORIA);
         cliente.setIdentificacion(comandoCliente.getIdentificacion());
