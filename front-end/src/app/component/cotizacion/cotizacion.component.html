@@ -1,30 +1,56 @@
 <div class="container">
-    <form>
+    <form [formGroup]="form">
         <div class="row">
-            <div class="col">
+            <div class="col-16 col-sm mb-3">
                 <label for="referencia-moto">Moto:</label>
-                <select id="referencia-moto" class="form-control">
+                <select id="referencia-moto" class="form-control" formControlName="idMoto">
                     <option *ngFor="let moto of motos" [value]="moto.idMoto">{{moto.referencia}}</option>
                 </select>
             </div>
-            <div class="col">
+            <div class="col-16 col-sm mb-3">
                 <label for="precio-moto">Precio:</label>
-                <input id="precio-moto" type="number" class="form-control" [value]="moto? moto.precio : 0" readonly>
+                <input id="precio-moto" type="text" class="form-control" [value]="moto? moto.precio : 0" readonly>
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-16 col-sm mb-3">
                 <label for="cuota-inicial">Cuota Inicial:</label>
-                <input id="cuota-inicial" type="text" class="form-control">
+                <input id="cuota-inicial" type="text" class="form-control" formControlName="valorCuotaInicial">
             </div>
-            <div class="col">
+            <div class="col-16 col-sm mb-3">
                 <label for="numero-cuotas">Numero Cuotas:</label>
-                <input id="numero-cuotas" type="number" class="form-control">
+                <input id="numero-cuotas" type="number" min="1" max="36" class="form-control"
+                    formControlName="numeroCuotas">
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                
+            <div class="col-16 col-sm d-grid mt-4 mb-3">
+                <button type="button" class="btn btn-primary" (click)="calcularValorCuota()">Calcular Valor
+                    Cuota</button>
+            </div>
+            <div class="col-16 col-sm mb-3">
+                <label for="valor-cuota">Valor Cuota</label>
+                <input id="valor-cuota" type="text" class="form-control" readonly formControlName="valorCuota">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-16 col-sm mb-3">
+                <label for="cliente">Identificacion Cliente</label>
+                <input id="cliente" type="text" class="form-control mb-1" formControlName="identificacionCliente"
+                    (keyup.enter)="buscarCliente()">
+                <input type="text" class="form-control" [value]="cliente?.nombreCompleto" readonly>
+            </div>
+            <div class="col-16 col-sm mb-3">
+                <label for="vendedor">Identificacion Vendedor</label>
+                <input id="vendedor" type="text" class="form-control mb-1" formControlName="identificacionVendedor"
+                    (keyup.enter)="buscarVendedor()">
+                <input type="text" class="form-control" [value]="vendedor?.nombreCompleto" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-grid mt-3 mb-3">
+                <button type="button" class="btn btn-outline-success" (click)="aceptarCredito()">Aceptar
+                    Credito</button>
             </div>
         </div>
     </form>

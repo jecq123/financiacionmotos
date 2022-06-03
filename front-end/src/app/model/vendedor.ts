@@ -2,5 +2,9 @@ import { Persona } from "./persona";
 
 export interface Vendedor {
     idVendedor: number;
-    persona: Persona;
+    identificacion: string;
+    nombreCompleto: string;
+    contacto: string;
+    correo: string;
+    residencia: string;
 }
