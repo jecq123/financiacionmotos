@@ -4,4 +4,5 @@ import co.com.uco.sistemainventario.entidad.Vendedor;
 
 public interface ConsultaServicioVendedor {
     Iterable<Vendedor> findAll();
+    Vendedor findByIdentificacion(String identificacion);
 }
