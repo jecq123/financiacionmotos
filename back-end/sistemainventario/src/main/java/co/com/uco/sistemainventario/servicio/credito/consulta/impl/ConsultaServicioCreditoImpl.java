@@ -74,8 +74,40 @@ public class ConsultaServicioCreditoImpl implements ConsultaServicioCredito {
                 return 0.078748;
             case 20:
                 return 0.076211;
-            default:
+            case 21:
                 return 0.07393;
+            case 22:
+                return 0.07187;
+            case 23:
+                return 0.070001;
+            case 24:
+                return 0.0683;
+            case 25:
+                return 0.066747;
+            case 26:
+                return 0.065323;
+            case 27:
+                return 0.064016;
+            case 28:
+                return 0.062812;
+            case 29:
+                return 0.0617;
+            case 30:
+                return 0.060671;
+            case 31:
+                return 0.059718;
+            case 32:
+                return 0.058832;
+            case 33:
+                return 0.058008;
+            case 34:
+                return 0.05724;
+            case 35:
+                return 0.056523;
+            case 36:
+                return 0.052869;
+            default:
+                return 0.05286;
         }
     }
 }
