@@ -10,6 +10,7 @@ const URL = environment.url + 'moto';
   providedIn: 'root'
 })
 export class MotoService {
+  
   static moto: Moto;
 
   constructor(private http: HttpClient, private serviceUtil: ServiceUtil) { }
@@ -17,4 +18,8 @@ export class MotoService {
   getAll(): Observable<Moto[]> {
     return this.http.get<Moto[]>(URL, {headers: this.serviceUtil.getSimpleHeader()});
   }
+  delete(moto: Moto): Observable<{valor: number}> {
+    return of({valor: 0});
+  }
+
 }
