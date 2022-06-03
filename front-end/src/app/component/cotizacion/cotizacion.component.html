@@ -9,7 +9,8 @@
             </div>
             <div class="col-16 col-sm mb-3">
                 <label for="precio-moto">Precio:</label>
-                <input id="precio-moto" type="text" class="form-control" [value]="moto? moto.precio : 0" readonly>
+                <input id="precio-moto" type="text" class="form-control disabled" [value]="moto? moto.precio : 0"
+                    readonly>
             </div>
         </div>
         <div class="row">
@@ -30,7 +31,7 @@
             </div>
             <div class="col-16 col-sm mb-3">
                 <label for="valor-cuota">Valor Cuota</label>
-                <input id="valor-cuota" type="text" class="form-control" readonly formControlName="valorCuota">
+                <input id="valor-cuota" type="text" class="form-control disabled" readonly formControlName="valorCuota">
             </div>
         </div>
         <div class="row">
@@ -38,13 +39,13 @@
                 <label for="cliente">Identificacion Cliente</label>
                 <input id="cliente" type="text" class="form-control mb-1" formControlName="identificacionCliente"
                     (keyup.enter)="buscarCliente()">
-                <input type="text" class="form-control" [value]="cliente?.nombreCompleto" readonly>
+                <input type="text" class="form-control disabled" [value]="cliente?.nombreCompleto" readonly>
             </div>
             <div class="col-16 col-sm mb-3">
                 <label for="vendedor">Identificacion Vendedor</label>
                 <input id="vendedor" type="text" class="form-control mb-1" formControlName="identificacionVendedor"
                     (keyup.enter)="buscarVendedor()">
-                <input type="text" class="form-control" [value]="vendedor?.nombreCompleto" readonly>
+                <input type="text" class="form-control disabled" [value]="vendedor?.nombreCompleto" readonly>
             </div>
         </div>
         <div class="row">

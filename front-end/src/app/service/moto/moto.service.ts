@@ -10,7 +10,7 @@ const URL = environment.url + 'moto';
   providedIn: 'root'
 })
 export class MotoService {
-  private motos: Moto[] = [];
+  static moto: Moto;
 
   constructor(private http: HttpClient, private serviceUtil: ServiceUtil) { }
 

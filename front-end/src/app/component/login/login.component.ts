@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
                   showConfirmButton: false,
                   timer: 1500
                 });
-                this.router.navigate(['/home']);
+                this.router.navigate(['/moto-home']);
               }, _ => {
                 
                 Swal.fire({
