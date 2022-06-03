@@ -22,4 +22,4 @@ INSERT INTO moto (referencia,marca, modelo, cilindraje, precio ) values('AX4', '
 
 INSERT INTO cliente (identificacion, nombrecompleto, contacto, correo, residencia) values ('1007334302', 'Brayan Estiven Sepulveda Quintero', '320 864 91 85', 'brayan.sepulveda4302@soyuco.edu.co', 'Marinilla')
 
-INSERT INTO vendedor (identificacion, nombrecompleto, contacto, correo, residencia) values ('1007334302', 'Brayan Estiven Sepulveda Quintero', '320 864 91 85', 'brayan.sepulveda4302@soyuco.edu.co', 'Marinilla')
+INSERT INTO vendedor (identificacion, nombrecompleto, contacto) values ('1007334302', 'Brayan Estiven Sepulveda Quintero', '320 864 91 85')

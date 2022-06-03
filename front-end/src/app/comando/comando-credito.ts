@@ -1,4 +1,4 @@
-export interface CoamndoCredito {
+export interface ComandoCredito {
     idCredito: number;
     idCliente: number;
     idVendedor: number;

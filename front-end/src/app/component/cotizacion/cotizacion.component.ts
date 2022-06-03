@@ -5,6 +5,7 @@ import { Credito } from 'src/app/model/credito';
 import { Moto } from 'src/app/model/moto';
 import { Vendedor } from 'src/app/model/vendedor';
 import { ClienteService } from 'src/app/service/cliente/cliente.service';
+import { CreditoService } from 'src/app/service/credito/credito.service';
 import { MotoService } from 'src/app/service/moto/moto.service';
 import { VendedorService } from 'src/app/service/vendedor/vendedor.service';
 import { Excepcion } from 'src/app/util/excepcion';
@@ -16,16 +17,17 @@ import { Excepcion } from 'src/app/util/excepcion';
 })
 export class CotizacionComponent implements OnInit {
   motos: Moto[] = [];
-  moto: Moto | undefined;
+  moto!: Moto;
   form!: FormGroup;
-  cliente: Cliente | undefined;
-  vendedor: Vendedor | undefined;
+  cliente!: Cliente;
+  vendedor!: Vendedor;
 
   constructor(
     private formBuilder: FormBuilder,
     private motoService: MotoService,
     private clienteService: ClienteService,
-    private vendedorService: VendedorService
+    private vendedorService: VendedorService,
+    private creditoService: CreditoService
   ) { }
 
   ngOnInit(): void {
@@ -33,7 +35,10 @@ export class CotizacionComponent implements OnInit {
     this.motoService.getAll().toPromise().then(motos => {
       this.motos = motos;
     }).catch(error => Excepcion.controlar(error));
-    this.form.controls.idMoto.valueChanges.subscribe(idMoto => this.moto = this.motos.find(moto => moto.idMoto == idMoto));
+    this.form.controls.idMoto.valueChanges.subscribe(idMoto => {
+      const moto = this.motos.find(moto => moto.idMoto == idMoto);
+      moto? this.moto = moto : undefined;
+    });
   }
 
   buildForm(): void {
@@ -49,9 +54,9 @@ export class CotizacionComponent implements OnInit {
   }
 
   calcularValorCuota(): void {
-    const valorCuota = ((this.moto ? this.moto.precio : 0) - Number(this.form.value.valorCuotaInicial))
-      / Number(this.form.value.numeroCuotas) * 1.1;
-    this.form.get('valorCuota')?.setValue(valorCuota);
+    this.creditoService.calcularValorCuota(this.buildCredito()).toPromise()
+      .then(valorCuota => this.form.get('valorCuota')?.setValue(valorCuota))
+      .catch(error => Excepcion.controlar(error));
   }
 
   buscarCliente(): void {
@@ -65,14 +70,22 @@ export class CotizacionComponent implements OnInit {
   }
 
   aceptarCredito(): void {
-    const credito: Credito = {
-      ...this.form.value,
+    console.log(this.buildCredito());
+    console.log(this.moto);
+  }
+
+  buildCredito(): Credito {
+    return {
+      idCredito: this.form.value.idCredito,
+      numeroCuotas: this.form.value.numeroCuotas,
+      valorCuotaInicial: this.form.value.valorCuotaInicial,
+      fecha: new Date(),
+      valorCuota: 0,
       moto: this.moto,
+      valorMoto: this.moto.precio,
       cliente: this.cliente,
       vendedor: this.vendedor
     };
-    console.log(credito);
-    console.log(this.moto);
   }
 
 }
