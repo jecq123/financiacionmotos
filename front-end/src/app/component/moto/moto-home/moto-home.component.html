@@ -1,0 +1,7 @@
+<div class="container mt-4">
+    <div class="row row-cols-auto justify-content-center">
+        <div class="col mb-4" *ngFor="let moto of listaMotos">
+            <app-moto-card class="mask" [moto]="moto" routerLink="/cotizacion" (click)="setMoto(moto)"></app-moto-card>
+        </div>
+    </div>
+</div>

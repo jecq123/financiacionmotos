@@ -15,6 +15,9 @@ import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { LoginComponent } from './component/login/login.component';
 import { ProductoComponent } from './component/producto/producto.component';
 import { CotizacionComponent } from './component/cotizacion/cotizacion.component';
+import { MotoCardComponent } from './component/moto/moto-card/moto-card.component';
+import { MotoHomeComponent } from './component/moto/moto-home/moto-home.component';
+import { MotoFormComponent } from './component/moto/moto-form/moto-form.component';
 const maskConfigFunction: () => Partial<IConfig> = () => {
   return {
     validation: false,
@@ -31,7 +34,10 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     ProductFormComponent,
     LoginComponent,
     ProductoComponent,
-    CotizacionComponent
+    CotizacionComponent,
+    MotoCardComponent,
+    MotoHomeComponent,
+    MotoFormComponent
   ],
   imports: [
     BrowserModule,

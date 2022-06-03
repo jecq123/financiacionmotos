@@ -1,0 +1,42 @@
+<div class="container">
+    <button class="btn btn-dark btn-outline-success mt-5 mb-5 me-1" data-bs-toggle="modal" data-bs-target="#motoForm">Nuevo producto</button>
+    <div class="row">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Referencia</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Cilindraje</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let moto of listaMotos">
+                <tr>
+                    <td>{{moto.referencia}}</td>
+                    <td>{{moto.marca}}</td>
+                    <td>{{moto.modelo}}</td>
+                    <td>{{moto.cilindraje}}</td>
+                    <td>{{moto.precio}}</td>
+                    <button type="button" class="btn btn-dark btn-outline-success" data-bs-toggle="modal" data-bs-target="#motoForm">editar</button>
+                    <button type="button" class="btn btn-dark btn-outline-success" (click)=delete(moto)>eliminar</button>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="motoForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nueva Motocicleta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="g-3" [formGroup]="form">
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

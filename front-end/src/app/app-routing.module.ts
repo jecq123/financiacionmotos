@@ -5,19 +5,21 @@ import { ProductHomeComponent } from './component/product-home/product-home.comp
 import { LoginComponent } from './component/login/login.component';
 import { ProductoComponent } from './component/producto/producto.component';
 import { CotizacionComponent } from './component/cotizacion/cotizacion.component';
+import { MotoHomeComponent } from './component/moto/moto-home/moto-home.component';
+import { MotoFormComponent } from './component/moto/moto-form/moto-form.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent
+    path: 'moto-home',
+    component: MotoHomeComponent
   },
   {
     path: 'product-home',
     component: ProductHomeComponent
   },
   {
-    path: 'producto',
-    component: ProductoComponent
+    path: 'moto-perfil',
+    component: MotoFormComponent
   },
   {
     path: 'cotizacion',

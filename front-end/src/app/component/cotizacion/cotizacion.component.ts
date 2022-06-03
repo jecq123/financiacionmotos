@@ -17,7 +17,7 @@ import { Excepcion } from 'src/app/util/excepcion';
 })
 export class CotizacionComponent implements OnInit {
   motos: Moto[] = [];
-  moto!: Moto;
+  moto = MotoService.moto;
   form!: FormGroup;
   cliente!: Cliente;
   vendedor!: Vendedor;
@@ -47,7 +47,7 @@ export class CotizacionComponent implements OnInit {
       idCredito: [undefined],
       identificacionCliente: [undefined, Validators.required],
       identificacionVendedor: [undefined, Validators.required],
-      idMoto: [undefined, Validators.required],
+      idMoto: [this.moto?.idMoto, Validators.required],
       valorCuotaInicial: [undefined, Validators.required],
       numeroCuotas: [undefined, Validators.required],
       valorCuota: [undefined, Validators.required]
