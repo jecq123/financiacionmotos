@@ -47,4 +47,16 @@ public class Credito {
     @OneToMany
     @JoinColumn(name = "idcredito")
     private List<Cuota> listaCuotas;
+
+    public Cliente getCliente() {
+        return cliente == null ? new Cliente() : cliente;
+    }
+
+    public Vendedor getVendedor() {
+        return vendedor == null ? new Vendedor() : vendedor;
+    }
+
+    public Moto getMoto() {
+        return moto == null ? new Moto() : moto;
+    }
 }
