@@ -12,21 +12,22 @@ public class CreditoConverter {
     public static final String EL_ID_DEL_CLIENTE_ES_OBLIGATORIO = "El id del cliente es obligatorio";
     public static final String EL_ID_DEL_VENDEDOR_ES_OBLIGATORIO = "El id del vendedor es obligatorio";
     public static final String EL_ID_DE_LA_MOTO_ES_OBLIGATORIO = "El id de la moto es obligatorio";
-
     public static final String EL_VALOR_DE_LA_MOTO_ES_OBLIGATORIO = "El valor de la moto es obligatorio";
     public static final String EL_VALOR_DE_LA_CUOTA_INICIAL_ES_OBLIGATORIO = "El valor de la cuota inicial es obligatorio";
     public static final String SE_REQUIERE_EL_NUMERO_DE_CUOTAS = "Se requiere el número de cuotas";
     public static final String LA_FECHA_DEL_CREDITO_ES_OBLIGATORIA = "La fecha del crédito es obligatoria";
     public static final String EL_ID_DEL_CREDITO_ES_OBLIGATORIO = "El id del crédito es obligatorio";
     public static final String EL_ID_DEL_CREDITO_ES_INVALIDO = "El id del crédito es inválido";
+    public static final String EL_VALOR_DE_LA_MOTO_DEBE_SER_POSITIVO = "El valor de la moto debe ser positivo";
+    public static final String EL_VALOR_DE_LA_CUOTA_INICIAL_DEBE_SER_POSITIVO = "El valor de la cuota inicial debe ser positivo";
 
     public Credito crear(ComandoCredito comandoCredito) {
         Credito credito = new Credito();
         ValidadorArgumento.validarObligatorio(comandoCredito.getIdCliente(), EL_ID_DEL_CLIENTE_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoCredito.getIdVendedor(), EL_ID_DEL_VENDEDOR_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoCredito.getIdMoto(), EL_ID_DE_LA_MOTO_ES_OBLIGATORIO);
-        ValidadorArgumento.validarObligatorio(comandoCredito.getValorMoto(), EL_VALOR_DE_LA_MOTO_ES_OBLIGATORIO);
-        ValidadorArgumento.validarObligatorio(comandoCredito.getValorCuotaInicial(), EL_VALOR_DE_LA_CUOTA_INICIAL_ES_OBLIGATORIO);
+        ValidadorArgumento.validarPositivo(comandoCredito.getValorMoto(), EL_VALOR_DE_LA_MOTO_DEBE_SER_POSITIVO);
+        ValidadorArgumento.validarPositivo(comandoCredito.getValorCuotaInicial(), EL_VALOR_DE_LA_CUOTA_INICIAL_DEBE_SER_POSITIVO);
         ValidadorArgumento.validarObligatorio(comandoCredito.getNumeroCuotas(), SE_REQUIERE_EL_NUMERO_DE_CUOTAS);
         ValidadorArgumento.validarObligatorio(comandoCredito.getFecha(), LA_FECHA_DEL_CREDITO_ES_OBLIGATORIA);
         credito.getCliente().setIdCliente(comandoCredito.getIdCliente());
@@ -47,7 +48,9 @@ public class CreditoConverter {
         ValidadorArgumento.validarObligatorio(comandoCredito.getIdVendedor(), EL_ID_DEL_VENDEDOR_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoCredito.getIdMoto(), EL_ID_DE_LA_MOTO_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoCredito.getValorMoto(), EL_VALOR_DE_LA_MOTO_ES_OBLIGATORIO);
+        ValidadorArgumento.validarPositivo(comandoCredito.getValorMoto(), EL_VALOR_DE_LA_MOTO_DEBE_SER_POSITIVO);
         ValidadorArgumento.validarObligatorio(comandoCredito.getValorCuotaInicial(), EL_VALOR_DE_LA_CUOTA_INICIAL_ES_OBLIGATORIO);
+        ValidadorArgumento.validarPositivo(comandoCredito.getValorCuotaInicial(), EL_VALOR_DE_LA_CUOTA_INICIAL_DEBE_SER_POSITIVO);
         ValidadorArgumento.validarObligatorio(comandoCredito.getNumeroCuotas(), SE_REQUIERE_EL_NUMERO_DE_CUOTAS);
         ValidadorArgumento.validarObligatorio(comandoCredito.getFecha(), LA_FECHA_DEL_CREDITO_ES_OBLIGATORIA);
         credito.setIdCredito(comandoCredito.getIdCredito());

@@ -2,6 +2,7 @@ package co.com.uco.sistemainventario;
 
 import co.com.uco.sistemainventario.comando.ComandoMoto;
 import co.com.uco.sistemainventario.converter.MotoConverter;
+import co.com.uco.sistemainventario.validador.excepcion.ExcepcionValorInvalido;
 import co.com.uco.sistemainventario.validador.excepcion.ExcepcionValorObligatorio;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -116,6 +117,25 @@ public class MotoConverterTest {
             motoConverter.crear(comandoMoto);
         } catch (ExcepcionValorObligatorio e) {
             assertEquals("El precio de la moto es obligatorio", e.getMessage());
+        }
+    }
+
+    @Test
+    void crearConPrecioNegativoDeberiaLanzarError() {
+        var motoConverter = new MotoConverter();
+        var comandoMoto = new ComandoMoto();
+
+        comandoMoto.setIdMoto(1);
+        comandoMoto.setReferencia("Gixxer 250");
+        comandoMoto.setMarca("Suzuki");
+        comandoMoto.setModelo(2022);
+        comandoMoto.setCilindraje(249);
+        comandoMoto.setPrecio(-150000);
+
+        try {
+            motoConverter.crear(comandoMoto);
+        } catch (ExcepcionValorInvalido e) {
+            assertEquals("El precio de la moto debe ser positivo", e.getMessage());
         }
     }
 }

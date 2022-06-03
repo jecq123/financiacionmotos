@@ -2,6 +2,7 @@ package co.com.uco.sistemainventario;
 
 import co.com.uco.sistemainventario.comando.ComandoCredito;
 import co.com.uco.sistemainventario.converter.CreditoConverter;
+import co.com.uco.sistemainventario.validador.excepcion.ExcepcionValorInvalido;
 import co.com.uco.sistemainventario.validador.excepcion.ExcepcionValorObligatorio;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -99,8 +100,9 @@ class CreditoConverterTest {
         }
     }
 
+
     @Test
-    void crearSinValorMotoDeberiaLanzarError() {
+    void crearConValorMotoNegativoDeberiaLanzarError() {
 
         var creditoConverter = new CreditoConverter();
         var comandoCredito = new ComandoCredito();
@@ -109,19 +111,20 @@ class CreditoConverterTest {
         comandoCredito.setIdCliente(1);
         comandoCredito.setIdVendedor(1);
         comandoCredito.setIdMoto(1);
+        comandoCredito.setValorMoto(-14290000);
         comandoCredito.setValorCuotaInicial(8000000);
         comandoCredito.setNumeroCuotas(10);
         comandoCredito.setFecha(LocalDateTime.now());
 
         try {
             creditoConverter.crear(comandoCredito);
-        } catch (ExcepcionValorObligatorio e){
-            assertEquals("El valor de la moto es obligatorio", e.getMessage());
+        } catch (ExcepcionValorInvalido e){
+            assertEquals("El valor de la moto debe ser positivo", e.getMessage());
         }
     }
 
     @Test
-    void crearSinValorCuotaInicialDeberiaLanzarError() {
+    void crearConValorCuotaInicialNegativoDeberiaLanzarError() {
 
         var creditoConverter = new CreditoConverter();
         var comandoCredito = new ComandoCredito();
@@ -131,13 +134,14 @@ class CreditoConverterTest {
         comandoCredito.setIdVendedor(1);
         comandoCredito.setIdMoto(1);
         comandoCredito.setValorMoto(14290000);
+        comandoCredito.setValorCuotaInicial(-8000000);
         comandoCredito.setNumeroCuotas(10);
         comandoCredito.setFecha(LocalDateTime.now());
 
         try {
             creditoConverter.crear(comandoCredito);
-        } catch (ExcepcionValorObligatorio e){
-            assertEquals("El valor de la cuota inicial es obligatorio", e.getMessage());
+        } catch (ExcepcionValorInvalido e){
+            assertEquals("El valor de la cuota inicial debe ser positivo", e.getMessage());
         }
     }
 

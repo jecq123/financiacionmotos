@@ -15,6 +15,7 @@ public class MotoConverter {
     public static final String EL_PRECIO_DE_LA_MOTO_ES_OBLIGATORIO = "El precio de la moto es obligatorio";
     public static final String EL_ID_DE_LA_MOTO_ES_OBLIGATORIO = "El id de la moto es obligatorio";
     public static final String EL_ID_DE_LA_MOTO_NO_ES_VALIDO = "El id de la moto no es válido";
+    public static final String EL_PRECIO_DE_LA_MOTO_DEBE_SER_POSITIVO = "El precio de la moto debe ser positivo";
 
     public Moto crear(ComandoMoto comandoMoto) {
         Moto moto = new Moto();
@@ -23,6 +24,7 @@ public class MotoConverter {
         ValidadorArgumento.validarObligatorio(comandoMoto.getModelo(), EL_MODELO_DE_LA_MOTO_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoMoto.getCilindraje(), EL_CILINDRAJE_DE_LA_MOTO_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoMoto.getPrecio(), EL_PRECIO_DE_LA_MOTO_ES_OBLIGATORIO);
+        ValidadorArgumento.validarPositivo(comandoMoto.getPrecio(), EL_PRECIO_DE_LA_MOTO_DEBE_SER_POSITIVO);
         moto.setReferencia(comandoMoto.getReferencia());
         moto.setMarca(comandoMoto.getMarca());
         moto.setModelo(comandoMoto.getModelo());
@@ -39,6 +41,7 @@ public class MotoConverter {
         ValidadorArgumento.validarObligatorio(comandoMoto.getModelo(), EL_MODELO_DE_LA_MOTO_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoMoto.getCilindraje(), EL_CILINDRAJE_DE_LA_MOTO_ES_OBLIGATORIO);
         ValidadorArgumento.validarObligatorio(comandoMoto.getPrecio(), EL_PRECIO_DE_LA_MOTO_ES_OBLIGATORIO);
+        ValidadorArgumento.validarPositivo(comandoMoto.getPrecio(), EL_PRECIO_DE_LA_MOTO_DEBE_SER_POSITIVO);
         moto.setIdMoto(comandoMoto.getIdMoto());
         moto.setReferencia(comandoMoto.getReferencia());
         moto.setMarca(comandoMoto.getMarca());
