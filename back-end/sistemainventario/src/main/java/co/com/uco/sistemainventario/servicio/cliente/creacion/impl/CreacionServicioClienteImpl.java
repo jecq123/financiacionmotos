@@ -20,15 +20,12 @@ public class CreacionServicioClienteImpl implements CreacionServicioCliente {
 
     @Override
     public Integer ejecutar(Cliente cliente) {
-        if(buscarCliente(cliente)==null){
-            clienteRepository.save(cliente);
-            return cliente.getIdCliente();
-        }
-        throw new ExcepcionDuplicidad("Ya existe un cliente con ese numero de identificacion");
+        clienteRepository.save(cliente);
+        return cliente.getIdCliente();
     }
 
     private Cliente buscarCliente(Cliente cliente) {
-        return clienteRepository.findByIdentificacion(cliente.getIdentificacion());
+        return clienteRepository.findByIdentificacion(cliente.getIdentificacion()).orElseThrow(() -> new ExcepcionDuplicidad("Ya existe un cliente con esa identificacion"));
     }
 
 }

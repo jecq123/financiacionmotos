@@ -3,6 +3,8 @@ package co.com.uco.sistemainventario.servicio.cliente.consulta.impl;
 import co.com.uco.sistemainventario.entidad.Cliente;
 import co.com.uco.sistemainventario.persistencia.ClienteRepository;
 import co.com.uco.sistemainventario.servicio.cliente.consulta.ConsultaServicioCliente;
+import co.com.uco.sistemainventario.validador.excepcion.ExcepcionDuplicidad;
+import co.com.uco.sistemainventario.validador.excepcion.ExcepcionNoExisteRegistro;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,6 @@ public class ConsultaServicioClienteImpl implements ConsultaServicioCliente{
 
     @Override
     public Cliente findByIdentificacion(String identificacion) {
-        return clienteRepository.findByIdentificacion(identificacion);
+        return clienteRepository.findByIdentificacion(identificacion).orElseThrow(() -> new ExcepcionNoExisteRegistro("No existe el cliente"));
     }
 }
