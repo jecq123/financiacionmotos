@@ -16,7 +16,11 @@ export class CreditoService {
   constructor(private http: HttpClient, private serviceUtil: ServiceUtil) { }
 
   calcularValorCuota(credito: Credito): Observable<number> {
-    return this.http.post<number>(`${URL}/cuota`, this.buildComandoCredito(credito), {headers: this.serviceUtil.getJsonHeader()});
+    return this.http.post<number>(`${URL}/cuota`, this.buildComandoCredito(credito), { headers: this.serviceUtil.getJsonHeader() });
+  }
+
+  crear(credito: Credito): Observable<{valor: number}> {
+    return this.http.post<{valor: number}>(`${URL}`, this.buildComandoCredito(credito), { headers: this.serviceUtil.getJsonHeader() });
   }
 
   buildComandoCredito(credito: Credito): ComandoCredito {

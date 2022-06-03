@@ -21,6 +21,7 @@ export class CotizacionComponent implements OnInit {
   form!: FormGroup;
   cliente!: Cliente;
   vendedor!: Vendedor;
+  credito!: Credito;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -37,7 +38,7 @@ export class CotizacionComponent implements OnInit {
     }).catch(error => Excepcion.controlar(error));
     this.form.controls.idMoto.valueChanges.subscribe(idMoto => {
       const moto = this.motos.find(moto => moto.idMoto == idMoto);
-      moto? this.moto = moto : undefined;
+      moto ? this.moto = moto : undefined;
     });
   }
 
@@ -70,8 +71,11 @@ export class CotizacionComponent implements OnInit {
   }
 
   aceptarCredito(): void {
-    console.log(this.buildCredito());
-    console.log(this.moto);
+    this.credito = this.buildCredito();
+    this.creditoService.crear(this.credito).toPromise().then(idCredito => this.credito.idCredito = idCredito.valor)
+      .catch(error => Excepcion.controlar(error));
+    console.log(this.credito);
+    
   }
 
   buildCredito(): Credito {
@@ -80,7 +84,7 @@ export class CotizacionComponent implements OnInit {
       numeroCuotas: this.form.value.numeroCuotas,
       valorCuotaInicial: this.form.value.valorCuotaInicial,
       fecha: new Date(),
-      valorCuota: 0,
+      valorCuota: this.form.value.valorCuota,
       moto: this.moto,
       valorMoto: this.moto.precio,
       cliente: this.cliente,
